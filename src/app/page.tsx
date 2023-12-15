@@ -1,5 +1,4 @@
 "use client";
-import { useEffect } from "react";
 import styles from "./page.module.css";
 import useSWR from "swr";
 
@@ -24,11 +23,13 @@ export default function Home() {
 
   return (
     <main className={styles.main}>
+      <h1>CW office tag tracker</h1>
+      <p>Total count: {data.length}</p>
       {data.map((tag) => (
         <div key={tag.id}>
-          <h4>{tag.asset_name}</h4>
-          <p>{tag.category}</p>
-          <p>{new Date(tag.registered_at).toLocaleString()}</p>
+          <h4>Tag name: {tag.asset_name}</h4>
+          <p>Category {tag.category}</p>
+          <p> Registered at: {new Date(tag.registered_at).toLocaleString()}</p>
         </div>
       ))}
     </main>
