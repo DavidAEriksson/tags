@@ -26,7 +26,13 @@ export default function Home() {
       <h1>CW office tag tracker</h1>
       <p>Total count: {data.length}</p>
       {data.map((tag) => (
-        <div key={tag.id}>
+        <div
+          key={tag.id}
+          style={{
+            margin: "1rem",
+            border: "1px solid white",
+          }}
+        >
           <h4>Tag name: {tag.asset_name}</h4>
           <p>Category {tag.category}</p>
           <p> Registered at: {new Date(tag.registered_at).toLocaleString()}</p>
